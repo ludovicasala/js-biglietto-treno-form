@@ -21,31 +21,34 @@
 </head>
 
 <body>
-    <div class="container mt-3">
+    <div class="container my-5 text-center">
 
-        <div class="h1 text-center">CALCOLA IL PREZZO DEL TUO BIGLIETTO</div>
+        <div class="text-black fw-bold mb-4 fs-3">CALCOLA IL PREZZO DEL TUO BIGLIETTO</div>
 
-        <div class="row g-3">
-            <div class="col-md-4">
-                <div class="p text-center">Nome Cognome</div>
-                <input class="form-control" type="text" id="name-field" required autocomplete="off" />
-            </div>
-            <div class="col-md-4">
-                <div class="p text-center">KM da percorrere</div>
-                <input class="form-control" type="text" id="company-field" required autocomplete="off" />
-            </div>
-            <div class="col">
-                <div class="p text-center">Fascia d'età</div>
-                <select id="title-field" class="form-select" autocomplete="off">
-                    <option value="">Minorenne</option>
-                    <option value="Mr.">Maggiorenne</option>
-                    <option value="Mrs.">Over 65</option>
-                </select>
-            </div>
+        <div class="card shadow-lg border-0 p-4 mx-auto" style="max-width: 1000px; border-radius: 12px;">
+            <div class="row g-3 justify-content-center">
+                <div class="col-4">
+                    <label for="name-field" class="form-label fw-bold mb-2 text-center d-block">Nome Cognome</label>
+                    <input class="form-control" type="text" id="name-field" required autocomplete="off" />
+                </div>
+                <div class="col-4">
+                    <label for="km-field" class="form-label fw-bold mb-2 text-center d-block">KM da percorrere</label>
+                    <input class="form-control" type="text" id="km-field" required autocomplete="off" />
+                </div>
+                <div class="col-4">
+                    <label for="age-field" class="form-label fw-bold mb-2 text-center d-block">Fascia d'età</label>
+                    <select id="age-field" class="form-select" autocomplete="off">
+                        <option value="minorenne">Minorenne</option>
+                        <option value="maggiorenne">Maggiorenne</option>
+                        <option value="over65">Over 65</option>
+                    </select>
+                </div>
 
-            <div class="col-12 d-flex justify-content-center gap-2">
-                <button id="btn-submit" type="submit" class="btn btn-primary">GENERA</button>
-                <button id="btn-reset" type="reset" class="btn btn-secondary">ANNULLA</button>
+                <div class="col-12 d-flex justify-content-center gap-2 mt-4">
+                    <button id="btn-submit" type="submit" class="btn btn-primary">GENERA</button>
+                    <button id="btn-reset" type="reset" class="btn btn-secondary">ANNULLA</button>
+                </div>
+
             </div>
         </div>
 
