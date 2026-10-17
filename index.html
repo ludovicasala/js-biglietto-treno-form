@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="icon" href="favicon.ico" type="image/ico" />
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css'
+        integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=='
+        crossorigin='anonymous' />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JavaScript -->
+    <script defer src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="container mt-3">
+
+        <div class="h1 text-center">CALCOLA IL PREZZO DEL TUO BIGLIETTO</div>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="p text-center">Nome Cognome</div>
+                <input class="form-control" type="text" id="name-field" required autocomplete="off" />
+            </div>
+            <div class="col-md-4">
+                <div class="p text-center">KM da percorrere</div>
+                <input class="form-control" type="text" id="company-field" required autocomplete="off" />
+            </div>
+            <div class="col">
+                <div class="p text-center">Fascia d'età</div>
+                <select id="title-field" class="form-select" autocomplete="off">
+                    <option value="">Minorenne</option>
+                    <option value="Mr.">Maggiorenne</option>
+                    <option value="Mrs.">Over 65</option>
+                </select>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center gap-2">
+                <button id="btn-submit" type="submit" class="btn btn-primary">GENERA</button>
+                <button id="btn-reset" type="reset" class="btn btn-secondary">ANNULLA</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
