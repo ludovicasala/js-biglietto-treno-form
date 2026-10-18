@@ -1,5 +1,5 @@
 const ticketForm = document.getElementById('ticket-form');
-const btnReset = document.getElementById('btn-reset');
+const btnAnnulla = document.getElementById('btn-reset');
 
 ticketForm.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -30,7 +30,7 @@ ticketForm.addEventListener('submit', function (event) {
     document.getElementById('ticket-price').innerText = prezzoFinale.toFixed(2) + ' €';
 });
 
-btnReset.addEventListener('click', function () {
+btnAnnulla.addEventListener('click', function () {
     document.getElementById('ticket-name').innerText = '-';
     document.getElementById('ticket-offer').innerText = '-';
     document.getElementById('ticket-base-price').innerText = '-';
