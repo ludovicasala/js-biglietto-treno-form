@@ -1,31 +1,38 @@
-const buttonGenera = document.getElementById('btn-submit');
+const ticketForm = document.getElementById('ticket-form');
 const btnReset = document.getElementById('btn-reset');
 
-buttonGenera.addEventListener('click', function (event) {
+ticketForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // Inserimento nome nel box
+    // Recupero i valori inseriti dall'utente
     const nomeUtente = document.getElementById('name-field').value;
-    const boxNome = document.querySelector('.col-4.bg-secondary .mt-3');
-    boxNome.innerText = nomeUtente;
-
-    // Calcolo prezzo base
-    const kmDaPercorrere = document.getElementById('km-field').value;
+    const kmDaPercorrere = parseFloat(document.getElementById('km-field').value);
     const fasciaEta = document.getElementById('age-field').value;
 
-    let prezzoTotale = kmDaPercorrere * 0.21;
+    // Calcolo del prezzo base
+    const prezzoBase = kmDaPercorrere * 0.21;
+    let prezzoFinale = prezzoBase;
     let tipoOfferta = 'Biglietto Standard';
 
     // Calcolo sconto
     if (fasciaEta === 'minorenne') {
-        prezzoTotale = prezzoTotale * 0.80;
+        prezzoFinale = prezzoBase * 0.80;
         tipoOfferta = 'Sconto Minorenne';
     } else if (fasciaEta === 'over65') {
-        prezzoTotale = prezzoTotale * 0.60;
+        prezzoFinale = prezzoBase * 0.60;
         tipoOfferta = 'Sconto Over 65';
     }
 
-    const boxOfferta = document.getElementById('ticket-offer');
-    boxOfferta.innerText = tipoOfferta;
+    // Stampiamo risultati biglietto
+    document.getElementById('ticket-name').innerText = nomeUtente;
+    document.getElementById('ticket-offer').innerText = tipoOfferta;
+    document.getElementById('ticket-base-price').innerText = prezzoBase.toFixed(2) + ' €';
+    document.getElementById('ticket-price').innerText = prezzoFinale.toFixed(2) + ' €';
+});
 
+btnReset.addEventListener('click', function () {
+    document.getElementById('ticket-name').innerText = '-';
+    document.getElementById('ticket-offer').innerText = '-';
+    document.getElementById('ticket-base-price').innerText = '-';
+    document.getElementById('ticket-price').innerText = '-';
 });
