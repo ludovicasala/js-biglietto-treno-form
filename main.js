@@ -16,4 +16,16 @@ buttonGenera.addEventListener('click', function (event) {
     let prezzoTotale = kmDaPercorrere * 0.21;
     let tipoOfferta = 'Biglietto Standard';
 
+    // Calcolo sconto
+    if (fasciaEta === 'minorenne') {
+        prezzoTotale = prezzoTotale * 0.80;
+        tipoOfferta = 'Sconto Minorenne';
+    } else if (fasciaEta === 'over65') {
+        prezzoTotale = prezzoTotale * 0.60;
+        tipoOfferta = 'Sconto Over 65';
+    }
+
+    const boxOfferta = document.getElementById('ticket-offer');
+    boxOfferta.innerText = tipoOfferta;
+
 });
